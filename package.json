@@ -1,0 +1,18 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate && lftp -u admin@landings.kesan.org,azqswx784512 -e \"rm -r _nuxt;quit\" ftp.kesan.org && ncftpput -u admin@landings.kesan.org -p azqswx784512 -R ftp.kesan.org / .output/public/*",
+    "ftp": "ncftpput -u admin@landings.kesan.org -p azqswx784512 -R ftp.kesan.org / .output/public/*",
+    "preview": "nuxt preview"
+  },
+  "devDependencies": {
+    "nuxt": "3.5.3"
+  },
+  "dependencies": {
+    "@nuxtjs/tailwindcss": "^6.7.2",
+    "nuxt-lazy-load": "^3.0.4",
+    "vue3-carousel": "^0.3.1"
+  }
+}
